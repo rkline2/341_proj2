@@ -16,9 +16,10 @@
 
 using namespace std;
 
-int main(int argc, char *argv[]) {
+int main(int argc, char* argv[]) {
+    
 
-   
+    /*
     //Do we have the right number of aruguments?  We will validate those
     //arguments later.
     if (argc != 3) {
@@ -29,22 +30,24 @@ int main(int argc, char *argv[]) {
         cout << " to be indexed.\n" << endl;
 
         //This is the main driver.
-    } else {
-            string inFilterFile = argv[1]; //Filter file.
-            string inDataFile = argv[2];   //Data file.
-            
-        try {
-            Indexer *index = new Indexer(inFilterFile, inDataFile);
-            index->DoIndex();
-            delete index;
-            index = NULL;
-        }
-        //Something went wrong.
-        catch (Exceptions &cException) {
-            cout << "EXCEPTION: " << cException.GetMessage() << endl;
-            return 1;
-        }
     }
+    */
+    
+    string inFilterFile = "gsl.txt"; //Filter file.
+    string inDataFile = "input2.txt"; //Data file.
+
+    try {
+        Indexer* index = new Indexer(inFilterFile, inDataFile);
+        index->DoIndex();
+        delete index;
+        index = NULL;
+    }
+    //Something went wrong.
+    catch (Exceptions& cException) {
+        cout << "EXCEPTION: " << cException.GetMessage() << endl;
+        return 1;
+    }
+    
     //Uncomment for number of seconds running.
     //cout << clock() / (float)CLOCKS_PER_SEC) << endl;
     return 0;

@@ -47,12 +47,14 @@ public:
      * Find the smallest item in the tree.
      * Throw UnderflowException if empty.
      */
-    const Comparable& findMin() const
+    /***************************TEMP PUT BACK CONSTS**********************************************************/
+    const Comparable& findMin() const 
     {
         if (isEmpty())
             throw UnderflowException();
         return findMin(root)->element;
     }
+    /***************************TEMP PUT BACK CONSTS**********************************************************/
 
     /**
      * Find the largest item in the tree.
@@ -92,6 +94,22 @@ public:
         else
             printTree(root, out);
     }
+    /******************************ERASE WHEN FINSHED*************************************************/
+    void ValCheck(string filename) {
+        ifstream file;
+        file.open(filename);
+        if (file.good()) {
+            ValCheck(root, file);
+        }
+        file.close();
+    }
+    /******************************ERASE WHEN FINSHED*************************************************/
+
+    void Export(string filename) {
+        ofstream file(filename);
+        Export(root, file);
+        file.close();
+    }
 
     /**
      * Make the tree logically empty.
@@ -109,8 +127,8 @@ public:
         insert(x, root);
     }
 
-    void insertWord(Word& x) {
-        insertWord(x, x.GetFrontLineNum(), root);
+    void Insert_To_Word_BST(Word& x, const int& lineNum) {
+        Insert_To_Word_BST(x, root, lineNum);
     }
 
     /**
@@ -172,24 +190,27 @@ private:
             insert(x, t->left);
         else if (t->element < x)
             insert(x, t->right);
-        else 
+        else
             ;  // Duplicate; do nothing
     }
 
-    void insertWord(Word& x, int lineNum, BinaryNode*& t) {
+    void Insert_To_Word_BST(Word& x, BinaryNode*& t, const int& lineNum) {
         if (t == NULL) {
             t = new BinaryNode(x, NULL, NULL);
-            x.CountWord(lineNum);
         }
-        else if (x < t->m_data)
-            insert(x, t->left);
-        else if (t->m_data < x)
-            insert(x, t->right);
+        // move left
+        else if (x < t->element) {
+            Insert_To_Word_BST(x, t->left, lineNum);
+        }
+        // move right
+        else if (t->element < x) {
+            Insert_To_Word_BST(x, t->right, lineNum);
+        }
+        // Duplicate
         else {
-           
-            x.CountWord(lineNum);
+            t->element.CountWord(lineNum);
         }
-    
+        
     }
     /**
      * Internal method to remove from a subtree.
@@ -297,11 +318,39 @@ private:
         if (t != NULL)
         {
             printTree(t->left, out);
+
             out << t->element << endl;
             printTree(t->right, out);
         }
     }
 
+    /******************************ERASE WHEN FINSHED*************************************************/
+    void ValCheck(BinaryNode* t, ifstream& output) {
+        string line;
+        if (t != nullptr) {
+            ValCheck(t->left, output);
+
+            getline(output, line);
+            Word Temp; Temp.SetTestWord(line);
+            if (t->element == Temp) {}
+            else {
+                cout << "Incorrect Word: " << t->element << "Correct Word: " << Temp;
+            }
+
+            ValCheck(t->right, output);
+        }
+    }
+    /******************************ERASE WHEN FINSHED*************************************************/
+    void Export(BinaryNode* t, ofstream& input) {
+        if (t != nullptr) {
+            Export(t->left, input);
+
+            input << t->element << endl;
+            Export(t->right, input);
+        
+        }
+
+    }
     /**
      * Internal method to clone subtree.
      */

@@ -97,7 +97,7 @@ int main(int argc, char* argv[]) {
 
 
         // Input 2
-        /*************************************************************/
+        //////////////////////////////////////////////////////////////////
         try {
             inDataFile = "TestInput2.txt";
             Indexer* index5 = new Indexer(inFilterFile, inDataFile);
@@ -110,11 +110,11 @@ int main(int argc, char* argv[]) {
             cout << "EXCEPTION: " << cException.GetMessage() << endl;
             return 1;
         }
-        /*************************************************************/
+        /////////////////////////////////////////////////////////////////
 
 
         // Input 3
-        /*************************************************************/
+        ////////////////////////////////////////////////////////////////
         try {
             inDataFile = "TestInput3.txt";
             Indexer* index6 = new Indexer(inFilterFile, inDataFile);
@@ -127,11 +127,11 @@ int main(int argc, char* argv[]) {
             cout << "EXCEPTION: " << cException.GetMessage() << endl;
             return 1;
         }
-        /*************************************************************/
+        ///////////////////////////////////////////////////////////////
 
 
         // Input 4
-        /*************************************************************/
+        //////////////////////////////////////////////////////////////
         try {
             inDataFile = "TestInput4.txt";
             Indexer* index7 = new Indexer(inFilterFile, inDataFile);
@@ -144,7 +144,7 @@ int main(int argc, char* argv[]) {
             cout << "EXCEPTION: " << cException.GetMessage() << endl;
             return 1;
         }
-        /*************************************************************/
+        //////////////////////////////////////////////////////////////
         cout << "End of Tests. Check valgrind for memory leaks" << endl;
     }
 
@@ -153,3 +153,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+

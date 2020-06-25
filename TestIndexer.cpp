@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
     }
 
     else {
-        const string FILTER_CPY = argv[1]; inFilterFile = argv[1];
+        const string FILTER_CPY = "gsl.txt"; inFilterFile = "gsl.txt";
         
         cout << "Welcome to Index Test" << endl;
         
@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
         }
 
         // Test 2 Indexing without a Word BST (Expect an error) 
-        cout << "Test 2: Indexing with and without a word file" << endl;
+        cout << "\nTest 2: Indexing with and without a word file" << endl;
         cout << "Enter any value to continue: "; cin >> usrResponse;
         try {
             cout << "Testing without TestInput1.txt (expect an error)" << endl;
@@ -72,7 +72,7 @@ int main(int argc, char* argv[]) {
         catch (Exceptions& e) {
             cout << "Error " << e.GetMessage() << endl;
         }
-        cout << "Testing with TestInput1.txt" << endl;
+        cout << "Testing with TestInput1.txt as word file" << endl;
         cout << "Enter any value to continue: "; cin >> usrResponse;
         try {
             inFilterFile = FILTER_CPY; inDataFile = "TestInput1.txt";
@@ -87,12 +87,12 @@ int main(int argc, char* argv[]) {
         }
 
         // Test 3 Final 100m
-        cout << "Test 3: Final Test" << endl;
+        cout << "\nTest 3: Final Test" << endl;
         cout << "Indexing 3 Test .txt files given" << endl;
         cout << "Enter any value to continue: "; cin >> usrResponse;
 
 
-
+        // Input 2
         /*************************************************************/
         try {
             inDataFile = "TestInput2.txt";
@@ -109,7 +109,7 @@ int main(int argc, char* argv[]) {
         /*************************************************************/
 
 
-
+        // Input 3
         /*************************************************************/
         try {
             inDataFile = "TestInput3.txt";
@@ -126,7 +126,7 @@ int main(int argc, char* argv[]) {
         /*************************************************************/
 
 
-
+        // Input 4
         /*************************************************************/
         try {
             inDataFile = "TestInput4.txt";
@@ -141,11 +141,11 @@ int main(int argc, char* argv[]) {
             return 1;
         }
         /*************************************************************/
-
+        cout << "End of Tests. Check valgrind for memory leaks" << endl;
     }
 
     //Uncomment for number of seconds running.
-    cout << (clock() / (float)CLOCKS_PER_SEC) << endl;
+    //cout << (clock() / (float)CLOCKS_PER_SEC) << endl;
 
     return 0;
 }

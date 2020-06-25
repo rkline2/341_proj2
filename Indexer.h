@@ -30,7 +30,6 @@ public:
 	// Post-Conditions: Deletes and clears all BSTs and filenames 
 	~Indexer();
 
-
 	// Name: DoIndex
 	// Description: Creates an Index and Filter BST
 	// based on the .txt files and displays the Words in the BST
@@ -38,6 +37,13 @@ public:
 	// Post-Conditions: Creates an Index and Filter BST and displays the Index BST
 	void DoIndex();
 
+	// Name: Export
+	// Description: Writes a Index BST to a .txt file 
+	// Pre-Conditions: BST exists 
+	// Post-Conditions: Writes Index BST to a .txt value 
+	void Export();
+
+private:
 	// Name: FileExists
 	// Description: Tests if a .txt file exists or not 
 	// Pre-Conditions: None 
@@ -63,13 +69,6 @@ public:
 	// Post-Conditions: Deep copy a string value to a char array
 	void String_To_Char(string, char[]);
 
-	// Name: Export
-	// Description: Writes a Index BST to a .txt file 
-	// Pre-Conditions: BST exists 
-	// Post-Conditions: Writes Index BST to a .txt value 
-	void Export();
-
-private:
 	// Name: FilterLine
 	// Description: Given a line from a .txt file, splits and 
 	// lowercases every word from the line and removes punctuation 

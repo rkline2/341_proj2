@@ -52,21 +52,16 @@ void Indexer::DoIndex() {
 		String_To_Char(m_dataFile, word_file); String_To_Char(m_filterFile, filter_file);
 	}
 	catch (ArrayIndexOutOfBoundsException& e) {
-		cerr << "Error: " << e.what() << endl;
+		throw Exceptions(e.what());
 	}
 
 	bool word_file_exists = FileExists(word_file), filter_file_exists = FileExists(filter_file);
 	// files does not exist 
 	if (!word_file_exists) { throw Exceptions("Word file not found"); }
 
-	if (word_file_exists && filter_file_exists) {
-		m_filteredBST = &FileFilterReader(m_filterFile);
-		m_indexBST = &FileWordReader(m_dataFile);
-	}
+	m_filteredBST = &FileFilterReader(m_filterFile);
+	m_indexBST = &FileWordReader(m_dataFile);
 
-	else {
-		m_indexBST = &FileWordReader(m_dataFile);
-	}
 	Export();
 	//m_indexBST->printTree();
 
@@ -220,7 +215,7 @@ void Indexer::Export() {
 		for (string::iterator it = fileName.begin(); it != fileName.end(); ++it) {
 
 			// data is not valid
-			if ((ispunct(*it) || isdigit(*it)) && (*it != DASH && *it != FILL_VAL && *it != UNDER_S)) { isValid = false; }
+			if (ispunct(*it) && (*it != DASH && *it != FILL_VAL && *it != UNDER_S)) { isValid = false; }
 
 			// pushes the last 4 chars
 			if (isValid && nameSize > start && it > fileName.end() - start) { endFile.push_back(*it); }

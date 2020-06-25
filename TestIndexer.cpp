@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
 
     //Do we have the right number of aruguments?  We will validate those
     //arguments later.
-    if (argc != 2) {
+    if (argc != 3) {
         cout << "Usage:  ./Proj2.out filter.file data.file\n" << endl;
         cout << "filter.file - The file that contains the list of words";
         cout << " not to be included." << endl;
@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
             cout << "Testing without a filter file" << endl;
             cout << "Enter any value to continue: "; cin >> usrResponse;
 
-            inFilterFile = ""; inDataFile = "TestInput1.txt";
+            inFilterFile.clear(); inDataFile = "TestInput1.txt";
             Indexer* index1 = new Indexer(inFilterFile, inDataFile);
             index1->DoIndex();
             delete index1;
@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
         try {
             cout << "Testing without TestInput1.txt (expect an error)" << endl;
             cout << "Enter any value to continue: "; cin >> usrResponse;
-            inFilterFile = ""; inDataFile = "";
+            inFilterFile.clear(); inDataFile.clear();
             Indexer* index2 = new Indexer(inFilterFile, inDataFile);
             index2->DoIndex();
             delete index2;

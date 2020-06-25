@@ -15,7 +15,7 @@
 #include "Word.h"
 
 using namespace std;
-
+/*
 int main(int argc, char *argv[]) {
 
    
@@ -49,4 +49,4 @@ int main(int argc, char *argv[]) {
     //cout << clock() / (float)CLOCKS_PER_SEC) << endl;
     return 0;
 }
-
+*/

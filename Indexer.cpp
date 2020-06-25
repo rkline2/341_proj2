@@ -55,7 +55,7 @@ void Indexer::DoIndex() {
 		throw Exceptions(e.what());
 	}
 
-	bool word_file_exists = FileExists(word_file), filter_file_exists = FileExists(filter_file);
+	bool word_file_exists = FileExists(word_file);
 	// files does not exist 
 	if (!word_file_exists) { throw Exceptions("Word file not found"); }
 

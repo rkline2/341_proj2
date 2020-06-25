@@ -246,7 +246,7 @@ ostream& operator<<(ostream& out, Word& source) {
 			out << source.GetWord();
 		}
 		catch (UnderflowException& e) {
-			throw exception(e.what());
+		  out << "Word DNE";
 		}
 		// display dots and count
 		out << setfill(FILL_VAL) << setw(width);
@@ -254,7 +254,7 @@ ostream& operator<<(ostream& out, Word& source) {
 			out << source.GetCount() << ": ";
 		}
 		catch (UnderflowException& e) {
-			throw exception(e.what());		
+		  out << "0";		
 		}
 		int i = 0;
 		// display linenumbers using a temp copy of queue

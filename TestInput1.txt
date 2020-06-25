@@ -1,0 +1,108 @@
+Yarn history:
+
+Natural fibers—cotton, flax, silk, and wool—represent the major fibers available to ancient civilizations.
+The earliest known samples of yarn and fabric of any kind were found near Robenhausen, Switzerland, where bundles of flax fibers
+and yarns and fragments of plain-weave linen fabric, were estimated to be about 7,000 years old.
+
+Cotton has also been cultivated and used to make fabrics for at least 7,000 years. It may have existed in Egypt as early as
+12,000 B.C. Fragments of cotton fabrics have been found by archeologists in Mexico (from 3500 B.C.)., in India (3000 B.C.), 
+in Peru (2500 B.C.), and in the southwestern United States (500 B.C.). Cotton did not achieve commercial importance in Europe
+until after the colonization of the New World. Silk culture remained a specialty of the Chinese from its beginnings (2600 B.C.)
+until the sixth century, when silkworms were first raised in the Byzantine Empire.
+
+Until about 1300, yarn was spun on the spindle and whorl. A spindle is a rounded stick with tapered ends to which the fibers
+are attached and twisted; a whorl is a weight attached to the spindle that acts
+as a flywheel to keep the spindle rotating. The fibers were pulled by hand from a bundle of
+carded fibers tied to a stick called a distaff. In hand carding, fibers are placed between two boards
+covered with leather, through which protrude fine wire hooks that catch the fibers as one board is pulled gently across the other.
+
+The spindle, which hangs from the fibers, twists the fibers as it rotates downward, and 
+spins a length of yarn as it pulls away from the fiber bundle. When the spindle reaches the
+floor, the spinner winds the yarn around the spindle to secure it and then starts the process again. 
+This is continued until all of the fiber is spun or until the spindle is full.
+
+A major improvement was the spinning wheel, invented in India between 500 and 1000 A.D. and first
+used in Europe during the Middle Ages. A horizontally mounted spindle is connected to a large, hand-driven wheel
+by a circular band. The distaff is mounted at one end of the spinning wheel and the fiber is fed by hand to the
+spindle, which turns as the wheel turns. A component called the flyer twists the thread just before it is wound 
+on a bobbin. The spindle and bobbin are attached to the wheel by separate parts, so that the bobbin turns more slowly
+than does the spindle. Thus, thread can be twisted and wound at the same time. About 150 years later, the Saxon wheel
+was introduced. Operated by a foot pedal, the Saxon wheel allowed both hands the freedom to work the fibers.
+
+A number of developments during the eighteenth century further mechanized the spinning process. In 1733, the flying shuttle 
+was invented by John Kay, followed by Hargreaves’ spinning jenny in 1766. The jenny featured a series of spindles set in a row,
+enabling one operator to produce large quantities of yarn. Several years later Richard Arkwright patented the spinning frame, a machine
+that used a series of rotating rollers to draw out the fibers. A decade later Samule Cromptons’ mule machine was invented, which could
+spin any type of yarn in one continuous operation.
+
+The ring frame was invented in 1828 by the American John Thorp and is still widely used today. This system involves hundreds of
+spindles mounted vertically inside a metal ring. Many natural fibers are now spun by the open-end system, where the fibers are drawn
+by air into a rapidly rotating cup and pulled out on the other side as a finished yarn.
+Raw Materials:
+
+About 15 different types of fibers are used to make yarn. These fibers fall into two categories,
+natural and synthetic. Natural fibers are those that are obtained from a plant or an animal and are mainly
+used in weaving textiles. The most abundant and commonly used plant fiber is cotton, gathered from the cotton
+boil or seed pod when it is mature. In fact, cotton is the best-selling fiber in America, outselling all synthetic fibers combined.
+
+Fibers taken from the plant leaf or stern are generally used for rope. Other plant fibers include acetate (made from wood pulp or
+cotton linters) and linen, made from flax, a vegetable fiber. Animal fibers include wool, made from sheep hair, and mohair, made from
+angora goats and rabbits. Silk is a protein extruded in long, continuous strands by the silkworm as it weaves its cocoon.
+
+Synthetic fibers are made by forcing a thick solution of polymerized chemicals through spinneret nozzles and hardening the resulting
+filament in a chemical bath. These include acrylic, nylon, polyester, polyolefin, rayon, spandex, and triacetate. Some of these fibers
+have similar characteristics to the natural fibers without the shrinkage problems. Other fibers have special properties for specific
+applications. For instance, spandex can be stretched over 500% without breaking.
+The Manufacturing Process:
+
+There are three major spinning processes: cotton, worsted or long-staple, or wool. Synthetic staple fibers can be made
+with any of these processes. Since more yarn is produced with the cotton process than the other two, its manufacture is described below.
+Preparing the fibers:
+
+Fibers are shipped in bales, which are opened by hand or machine. Natural fibers may require cleaning, whereas synthetic fibers
+only require separating. The picker loosens and separates the lumps of fiber and also cleans the fiber if necessary. Blending of 
+different staple fibers may be required for certain applications. Blending may be done during formation of the lap, during carding,
+or during drawing out. Quantities of each fiber are measured carefully and their proportions are consistently maintained.
+Carding:
+
+The carding machine is set with hundreds of fine wires that separate the fibers and pull them into somewhat parallel form. A thin web
+of fiber is formed, and as it moves along, it passes through a funnel-shaped device that produces a ropelike strand of parallel fibers.
+Blending can take place by joining laps of different fibers.
+Combing:
+
+When a smoother, finer yarn is required, fibers are subjected to a further paralleling method. A comblike device arranges fibers
+into parallel form, with short fibers falling out of the strand.
+Drawing out:
+
+After carding or combing, the fiber mass is referred to as the sliver. Several slivers are combined before this process.
+A series of rollers rotating at different rates of speed elongate the sliver into a single more uniform strand that is given
+a small amount of twist and fed into large cans. Carded slivers are drawn twice after carding. Combed slivers are drawn once
+before combing and twice more after combing.
+Twisting:
+
+The sliver is fed through a machine called the roving frame, where the strands of fiber are further elongated
+and given additional twist. These strands are called the roving.
+Spinning:
+
+The predominant commercial systems of yarn formation are ring spinning and open-end spinning. In ring spinning,
+the roving is fed from the spool through rollers. These rollers elongate the roving, which passes through the eyelet,
+moving down and through the traveler. The traveler moves freely around the stationary ring at 4,000 to 12,000 revolutions per minute
+. The spindle turns the bobbin at a constant speed. This turning of the bobbin and the movement of the traveler twists
+and winds the yarn in one operation.
+
+Open-end spinning omits the roving step. Instead, a sliver of fibers is fed into the spinner by a stream of air.
+The sliver is delivered to a rotary beater that separates the fibers into a thin stream that is carried into
+the rotor by a current of air through a tube or duct and is deposited in a V-shaped groove along the sides of the rotor.
+As the rotor turns, twist is produced. A constant stream of new fibers enters the rotor, is distributed in the groove,
+and is removed at the end of the formed yarn.
+The Future:
+
+Spinning systems and yarn manufacturing machinery will continue to become more automated and will be integrated as part of a manufacturing
+unit rather than as a separate process. Spinning machines have already been developed that combine carding and drawing functions. Production 
+rates will increase by orders of magnitude as machines become available with even more spindles. Robot-controlled equipment will become standard.
+
+Domestic yarn producers will continue to be threatened by competition from Asian countries, as these countries continue to buy the
+latest textile machinery technology. Higher domestic material prices will not help, since the cost of the raw material can represent up
+to 73% of the total cost of producing the yarn. U.S. yarn producers will continue to form alliances with their customers and customers’ 
+customers to remain competitive. The textile industry is also forming unique partnerships. The American Textile Partnership is a collaborative
+research and development program among industry, government, and academia aimed at strengthening the competitiveness of the U.S. industry.

@@ -3,6 +3,7 @@
 using namespace std;
 
     // Test program
+/*
 int main( )
 {
     BinarySearchTree<int> t;
@@ -50,3 +51,4 @@ int main( )
 
     return 0;
 }
+*/

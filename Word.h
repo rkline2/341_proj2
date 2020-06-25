@@ -5,7 +5,7 @@
 #include <fstream>
 #include <string>
 #include <queue>
-#include <iomanip>
+#include <iomanip> // for fill only
 #include "dsexceptions.h"
 
 using namespace std;

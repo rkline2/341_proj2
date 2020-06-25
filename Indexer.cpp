@@ -163,10 +163,9 @@ void Indexer::InsertWord(string& word, const int& lineNumber, BinarySearchTree<W
 void Indexer::FilterLine(string& line, int& lineNumber, BinarySearchTree<Word>& WordTree) {
 	// line must contain at least one character
 	if (line.size() != 0) {
-		int min = 0, maxVal = line.size();
-		char* currChar = &line[0], * frontVal = nullptr, * endVal = nullptr;
-		string word = "";
-
+	        char* currChar = &line[0]; string word = "";
+	        int  maxVal = line.size();
+	       
 		while (currChar != &line[maxVal]) {
 			// lowercase curr char 
 			if (!ispunct(*currChar) && isupper(*currChar)) {
@@ -208,15 +207,21 @@ void Indexer::String_To_Char(string source, char char_cpy[]) {
 // Name: Export
 // Writes Index BST to a .txt value
 void Indexer::Export() {
-	string fileName = "", endFile = ""; int start = 5; bool isValid = false;
-	while (!isValid) {
-		isValid = true;
-		cout << "Enter a filename to export data: "; cin >> fileName;
-		for (string::iterator it = fileName.begin(); it != fileName.end(); ++it) {
-			if ((ispunct(*it) || isdigit(*it)) && (*it != DASH && *it != FILL_VAL && *it != UNDER_S)) { isValid = false; }
-			if (fileName.size() > start && it > fileName.end() - start) { endFile.push_back(*it); }
-		}
-	}
-	if (endFile != END_FILE_NAME) { fileName += END_FILE_NAME; }
-	m_indexBST->Export(fileName);
+  string fileName = "", endFile = ""; int start = 5, nameSize = 0; bool isValid = false;
+  while (!isValid) {
+    isValid = true; endFile.clear(); fileName.clear(); nameSize = 0;
+    cout << "Enter a filename to export data: "; cin >> fileName;
+    nameSize = fileName.size();
+		
+    for (string::iterator it = fileName.begin(); it != fileName.end(); ++it) {
+
+      // data is not valid
+      if ((ispunct(*it) || isdigit(*it)) && (*it != DASH && *it != FILL_VAL && *it != UNDER_S)) {isValid = false;}
+
+      // pushes the last 4 chars
+      if (isValid && nameSize > start && it > fileName.end() - start) { endFile.push_back(*it); }
+    }
+  }
+      if (endFile != END_FILE_NAME) { fileName += END_FILE_NAME; }
+      m_indexBST->Export(fileName);
 }

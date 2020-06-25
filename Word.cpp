@@ -201,7 +201,7 @@ void Word::SetTestWord(string line) {
 Word& Word::operator=(Word& source) {
 	if (this != &source) {
 		// clears out old word
-		SetCount(NULL);
+		SetCount(0);
 
 		// deep copies values when the source is not empty 
 		if (!source.m_isEmpty) {
@@ -238,7 +238,7 @@ bool Word::operator!=(const Word& source) {
 // Name: operator <<
 // Given a Word, displays the given word 
 ostream& operator<<(ostream& out, Word& source) {
-
+  const int BREAK_LINE = 16;
 	if (!source.GetIsEmpty()) {
 		queue<int> temp = source.m_lineNumbers;
 		int width = MAX_DOTS - source.m_wordText.size();
@@ -249,11 +249,25 @@ ostream& operator<<(ostream& out, Word& source) {
 		out << setfill(FILL_VAL) << setw(width);
 
 		out << source.GetCount() << ": ";
-
+		int i = 0;
 		// display linenumbers using a temp copy of queue
 		while (!temp.empty()) {
-			out << temp.front() << " ";
-			temp.pop();
+		  if(i < BREAK_LINE || temp.front() == temp.back()){
+		    
+		    if(temp.front() != temp.back()){
+		      out << temp.front() << " ";
+		    }
+		    // last number in the queue
+		    else{
+		      out << temp.front();
+		    }
+		  }
+		  else{
+		    out << temp.front() << endl;
+		    i = 0;
+		  }
+		  temp.pop();
+		  i++;
 		}
 	}
 

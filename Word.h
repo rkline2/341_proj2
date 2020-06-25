@@ -12,7 +12,7 @@ using namespace std;
 
 const string EMPTY_STR = "", WORD_SP = " ", END_FILE_NAME = ".txt";
 const char APOST = '\'', QUOTE = '"', DASH = '-', DELIM = ' ', FILL_VAL = '.', UNDER_S = '_';
-const int MAX_CHAR = 256, MAX_DOTS = 24, MIN_FILE_NUM = 5;
+const int MAX_CHAR = 256, MAX_DOTS = 24, MIN_FILE_NUM = 5, ASCII_MIN_CHAR = -1, ASCII_MAX_CHAR = 255;
 
 class Word {
 public:
@@ -54,7 +54,7 @@ public:
 	// Post-Conditions: Returns front/back of linenumber queue
 	int GetBackLineNum();
 	int GetFrontLineNum();
-	
+
 	// Name: Wordtext accessors and mutators
 	// Description: Returns/sets m_wordText. CountWord 
 	// will push a new line number to the queue 

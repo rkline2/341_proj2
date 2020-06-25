@@ -84,8 +84,8 @@ private:
 
 	BinarySearchTree<Word>* m_filteredBST; // Filtered BST
 	BinarySearchTree<Word>* m_indexBST; // Index BST
-	string m_filterFile = ""; // Filtered BST .txt filename
-	string m_dataFile = ""; // Index BST .txt filename
+	string m_filterFile; // Filtered BST .txt filename
+	string m_dataFile; // Index BST .txt filename
 
 };
 

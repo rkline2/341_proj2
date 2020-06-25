@@ -73,7 +73,6 @@ int main(int argc, char* argv[]) {
         }
         catch (Exceptions& e) {
             cout << "Error " << e.GetMessage() << endl;
-	    return 1;
         }
 	
         cout << "Testing with TestInput1.txt as word file" << endl;

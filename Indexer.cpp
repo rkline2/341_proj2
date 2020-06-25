@@ -29,12 +29,24 @@ Indexer::Indexer() {
 // Name: Indexer (overloaded constructor)
 // Creates an Indexer object
 Indexer::Indexer(string filterFile, string dataFile) {
-	m_dataFile = dataFile;
-	m_filterFile = filterFile;
+  
+  // checks if WordFile exists and given values are valid 
+  char word_file[MAX_CHAR] = { NULL }, filter_file[MAX_CHAR] = { NULL };
+  try{  
+    String_To_Char(dataFile, word_file); String_To_Char(filterFile, filter_file);
+  }
+  catch(ArrayIndexOutOfBoundsException &e){ throw Exceptions(e.what()); }
 
-	m_indexBST = nullptr;
-	m_filteredBST = nullptr;
+  // word file DNE
+  if(!FileExists(word_file)){ throw Exceptions("Word file does not exist"); }
+
+  m_dataFile = dataFile;
+  m_filterFile = filterFile;
+
+  m_indexBST = nullptr;
+  m_filteredBST = nullptr;
 }
+
 // Name: ~Indexer (destructor)
 // Deletes and clears all BSTs and filenames  
 Indexer::~Indexer() {
@@ -47,35 +59,11 @@ Indexer::~Indexer() {
 // Name: DoIndex
 // Creates an Index and Filter BST and displays the Index BST
 void Indexer::DoIndex() {
-	char word_file[MAX_CHAR] = { NULL }, filter_file[MAX_CHAR] = { NULL };
-	try {
-		String_To_Char(m_dataFile, word_file); String_To_Char(m_filterFile, filter_file);
-	}
-	catch (ArrayIndexOutOfBoundsException& e) {
-	  delete m_filteredBST; delete m_indexBST;
-	  m_filteredBST = nullptr; m_indexBST = nullptr;
-	  m_filterFile.clear(); m_dataFile.clear();
-
-	  throw Exceptions(e.what());
-	}
-
-	bool word_file_exists = FileExists(word_file);
-	
-	// word file does not exist 
-	if (!word_file_exists) {
-	  delete m_filteredBST; delete m_indexBST;
-	  m_filteredBST = nullptr; m_indexBST = nullptr;
-	  m_filterFile.clear(); m_dataFile.clear();
-	  
-	  throw Exceptions("Word file not found");
-	}
-
 	m_filteredBST = &FileFilterReader(m_filterFile);
 	m_indexBST = &FileWordReader(m_dataFile);
 
 	Export();
 	//m_indexBST->printTree();
-
 }
 
 // Name: FileExists

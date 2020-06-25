@@ -1,6 +1,8 @@
 CXX = g++
 CXXFLAGS = -Wall
 
+compile: proj2
+
 proj2: Driver.o TestBinarySearchTree.o Word.o Indexer.o
 	$(CXX) $(CXXFLAGS) Driver.o TestBinarySearchTree.o Word.o Indexer.o -o proj2
 
@@ -20,6 +22,9 @@ Indexer.o: Indexer.h Indexer.cpp
 
 clean:
 	rm proj2 *o *~
+
+run:
+	./proj2 $(FILTER) $(DATA)
 
 run1:
 	./proj2 gsl.txt input1.txt

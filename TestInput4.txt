@@ -1,0 +1,44 @@
+Coin tossing is a simple and unbiased way of settling a dispute or deciding between two or more arbitrary options. In a game theoretic analysis it provides
+even odds to both sides involved, requiring little effort and preventing the dispute from escalating into a struggle. It is used widely in sports and other games to
+decide arbitrary factors such as which side of the field a team will play from, or which side will attack or defend initially; these decisions may tend to favor one side,
+or may be neutral. Factors such as wind direction, the position of the sun, and other conditions may affect the decision. In team sports it is often the captain who makes the
+call, while the umpire or referee usually oversees such proceedings. A competitive method may be used instead of a toss in some situations, for example in basketball
+the jump ball is employed, while the face-off plays a similar role in ice hockey. 
+
+Coin flipping is used to decide which end of the field the teams will play to and/or which team gets first use of the ball, or similar questions in football 
+matches, American football games, Australian rules football, volleyball, and other sports requiring such decisions. In the U.S. a specially minted coin is flipped
+in National Football League games; the coin is then sent to the Pro Football Hall of Fame, and other coins of the special series minted at the same time are sold
+to collectors. The original XFL, a short-lived American football league, attempted to avoid coin tosses by implementing a face-off style "opening scramble," in which
+one player from each team tried to recover a loose football; the team whose player recovered the ball got first choice. Because of the high rate of injury in these
+events, it has not achieved mainstream popularity in any football league (a modified version was adopted by X-League Indoor Football, in which each player pursued his
+own ball), and coin tossing remains the method of choice in American football. (The revived XFL, starting play in 2020, will forego the coin toss altogether and allow 
+that decision to be made as part of a team's home field advantage.)
+
+In an association football match, the team winning the coin toss chooses which goal to attack in the first half; the opposing team kicks off for
+the first half. For the second half, the teams switch ends, and the team that won the coin toss kicks off. Coin tosses are also used to decide which
+team has the pick of going first or second in a penalty shoot-out. Before the early-1970s introduction of the penalty shootout, coin tosses were occasionally
+needed to decide the outcome of tied matches. The most famous instance of this was the semifinal game of the 1968 European Championship in Italy between Italy
+and the Soviet Union, which finished 0-0 after extra time. Italy won, and went on to become European champions.[9] 
+
+In cricket the toss is often significant, as the decision whether to bat or bowl first can influence the outcome of the game. Similarly, in tennis a coin toss
+is used in professional matches to determine which player serves first. The player who wins the toss decides whether to serve first or return, while the
+loser of the toss decides which end of the court each player plays on first.
+
+In duels a coin toss was sometimes used to determine which combatant had the sun at his back.[10] In some other sports, the result of the toss is less
+crucial and merely a way to fairly choose between two more or less equal options. 
+
+The National Football League also has a coin toss for tie-breaking among teams for playoff berths and seeding, but the rules make the need for
+coin toss, which is random rather than competitive, very unlikely. A similar procedure breaks ties for the purposes of seeding in the NFL Draft; these
+coin tosses are more common, since the tie-breaking procedure for the draft is much less elaborate than the one used for playoff seeding.
+
+Major League Baseball once conducted a series of coin flips as a contingency on the last month of its regular season to determine home teams 
+for any potential one-game playoff games that might need to be added to the regular season. Most of these cases did not occur. From the 2009 season,
+the method to determine home-field advantage was changed.[11]
+
+Fédération Internationale d'Escrime rules use a coin toss to determine the winner of some fencing matches that remains tied at the end of a 
+"sudden death" extra minute of competition. Although in most international matches this is now done electronically by the scoring apparatus.[citation needed]
+
+In the United States Asa Lovejoy and Francis W. Pettygrove, who each owned the claim to the land that would later become Portland, Oregon,
+wanted to name the new town after their respective hometowns of Boston, Massachusetts and Portland, Maine; Pettygrove won the coin flip.[12]
+
+Scientists sometimes use coin flipping to determine the order in which they appear on the list of authors of scholarly papers.[13] 

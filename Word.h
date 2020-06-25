@@ -64,7 +64,8 @@ public:
 	string GetWord();
 	void CountWord(int);
 	void LowerWord();
-
+	
+	// Temp function
 	// void SetTestWord(string);
 
 	// Name: Word Overloaded Operators 

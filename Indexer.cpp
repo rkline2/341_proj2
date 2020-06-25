@@ -38,7 +38,7 @@ Indexer::Indexer(string filterFile, string dataFile) {
 // Name: ~Indexer (destructor)
 // Deletes and clears all BSTs and filenames  
 Indexer::~Indexer() {
-	delete m_filteredBST; delete m_indexBST; 
+	delete m_filteredBST; delete m_indexBST;
 	m_filteredBST = nullptr; m_indexBST = nullptr;
 
 	m_filterFile.clear(); m_dataFile.clear();
@@ -98,12 +98,12 @@ BinarySearchTree<Word>& Indexer::FileFilterReader(string filterFile) {
 	BinarySearchTree<Word>* IndexTree = new BinarySearchTree<Word>;
 	file.open(filterFile);
 	while (getline(file, newWord)) {
+		if (newWord.size() > 0) {
+			Word temp(newWord, lineNum);
+			temp.LowerWord();
 
-		Word temp(newWord, lineNum);
-		temp.LowerWord();
-
-		IndexTree->insert(temp);
-
+			IndexTree->insert(temp);
+		}
 		lineNum++;
 	}
 	file.close();
@@ -119,7 +119,10 @@ BinarySearchTree<Word>& Indexer::FileWordReader(string wordFile) {
 	file.open(wordFile.c_str());
 	BinarySearchTree<Word>* WordTree = new BinarySearchTree<Word>;
 	while (getline(file, line)) {
-		FilterLine(line, lineNum, *WordTree);
+		// does not accept blank lines
+		if (line.size() > 0) {
+			FilterLine(line, lineNum, *WordTree);
+		}
 		lineNum++;
 	}
 
@@ -133,13 +136,12 @@ void Indexer::InsertWord(string& word, const int& lineNumber, BinarySearchTree<W
 	int frontIndex = 0, endIndex;
 	char* frontVal = &word[frontIndex], * endVal = nullptr;
 
-	// if (frontVal != nullptr && ispunct(*frontVal) && *frontVal != APOST) { word.erase(frontIndex, frontIndex + 1); }
 	if (frontVal != nullptr && ispunct(*frontVal)) { word.erase(frontIndex, frontIndex + 1); }
 
 
 	if (word.length() != 0) {
 		endIndex = word.length() - 1; endVal = &word[endIndex];
-		// if (endVal != nullptr && ispunct(*endVal) && *endVal != APOST) { word.erase(endIndex); }
+
 		if (endVal != nullptr && ispunct(*endVal)) { word.erase(endIndex); }
 
 		Word temp(word, lineNumber);
@@ -163,27 +165,29 @@ void Indexer::InsertWord(string& word, const int& lineNumber, BinarySearchTree<W
 void Indexer::FilterLine(string& line, int& lineNumber, BinarySearchTree<Word>& WordTree) {
 	// line must contain at least one character
 	if (line.size() != 0) {
-	        char* currChar = &line[0]; string word = "";
-	        int  maxVal = line.size();
-	       
+		char* currChar = &line[0]; string word = "";
+		int  maxVal = line.size();
+
 		while (currChar != &line[maxVal]) {
-			// lowercase curr char 
-			if (!ispunct(*currChar) && isupper(*currChar)) {
-				*currChar = tolower(*currChar);
-			}
+			// must be a valid char
+			if (*currChar >= ASCII_MIN_CHAR && *currChar <= ASCII_MAX_CHAR) {
+				// lowercase curr char 
+				if (!ispunct(*currChar) && isupper(*currChar)) {
+					*currChar = tolower(*currChar);
+				}
 
-			// build word
-			if (*currChar != DELIM && (!ispunct(*currChar) || (*currChar == DASH && currChar != &line[maxVal]))
-				&& !isdigit(*currChar)) {
-				word.push_back(*currChar);
-			}
-			
+				// build word
+				if (*currChar != DELIM && (!ispunct(*currChar) || (*currChar == DASH && currChar != &line[maxVal]))
+					&& !isdigit(*currChar)) {
+					word.push_back(*currChar);
+				}
 
-			// word is created
-			else if ( (*currChar == DELIM || *currChar == APOST) && word != WORD_SP && word != EMPTY_STR) {
-				InsertWord(word, lineNumber, WordTree);
-			}
 
+				// word is created
+				else if ((*currChar == DELIM || *currChar == APOST) && word != WORD_SP && word != EMPTY_STR) {
+					InsertWord(word, lineNumber, WordTree);
+				}
+			}
 			currChar++;
 		}
 
@@ -207,21 +211,21 @@ void Indexer::String_To_Char(string source, char char_cpy[]) {
 // Name: Export
 // Writes Index BST to a .txt value
 void Indexer::Export() {
-  string fileName = "", endFile = ""; int start = 5, nameSize = 0; bool isValid = false;
-  while (!isValid) {
-    isValid = true; endFile.clear(); fileName.clear(); nameSize = 0;
-    cout << "Enter a filename to export data: "; cin >> fileName;
-    nameSize = fileName.size();
-		
-    for (string::iterator it = fileName.begin(); it != fileName.end(); ++it) {
+	string fileName = "", endFile = ""; int start = 5, nameSize = 0; bool isValid = false;
+	while (!isValid) {
+		isValid = true; endFile.clear(); fileName.clear(); nameSize = 0;
+		cout << "Enter a filename to export data: "; cin >> fileName;
+		nameSize = fileName.size();
 
-      // data is not valid
-      if ((ispunct(*it) || isdigit(*it)) && (*it != DASH && *it != FILL_VAL && *it != UNDER_S)) {isValid = false;}
+		for (string::iterator it = fileName.begin(); it != fileName.end(); ++it) {
 
-      // pushes the last 4 chars
-      if (isValid && nameSize > start && it > fileName.end() - start) { endFile.push_back(*it); }
-    }
-  }
-      if (endFile != END_FILE_NAME) { fileName += END_FILE_NAME; }
-      m_indexBST->Export(fileName);
+			// data is not valid
+			if ((ispunct(*it) || isdigit(*it)) && (*it != DASH && *it != FILL_VAL && *it != UNDER_S)) { isValid = false; }
+
+			// pushes the last 4 chars
+			if (isValid && nameSize > start && it > fileName.end() - start) { endFile.push_back(*it); }
+		}
+	}
+	if (endFile != END_FILE_NAME) { fileName += END_FILE_NAME; }
+	m_indexBST->Export(fileName);
 }

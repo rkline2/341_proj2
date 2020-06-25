@@ -8,11 +8,11 @@
 **
 ** Description:
 **
-** This file primarily focuses on creating the templated 
-** variable "Word" which will be stored in a node in a BST. 
+** This file primarily focuses on creating the templated
+** variable "Word" which will be stored in a node in a BST.
 ** Each variable will contain the word itself, the amount of
 ** times the word has been recorded (m_count) and a queue
-** of the line numbers where the word has been recorded. 
+** of the line numbers where the word has been recorded.
 **
 *************************************************************/
 #include "Word.h"
@@ -43,9 +43,9 @@ Word::~Word() {
 
 // Name: GetCount
 // Returns m_count
-int Word::GetCount() { 
+int Word::GetCount() {
 	if (m_isEmpty) { throw UnderflowException("Current word has not been indexed"); }
-	return m_count; 
+	return m_count;
 }
 
 // Name: SetCount
@@ -62,7 +62,7 @@ bool Word::GetIsEmpty() { return m_isEmpty; }
 
 // Name: SetIsEmpty
 // Given a bool, sets m_isEmpty
-void Word::SetIsEmpty(bool val) { 
+void Word::SetIsEmpty(bool val) {
 	if (val == true) { EmptyQueue(); m_wordText = EMPTY_STR; m_count = 0; m_isEmpty = true; }
 	else { m_isEmpty = false; }
 }
@@ -238,36 +238,43 @@ bool Word::operator!=(const Word& source) {
 // Name: operator <<
 // Given a Word, displays the given word 
 ostream& operator<<(ostream& out, Word& source) {
-  const int BREAK_LINE = 16;
+	const int BREAK_LINE = 16;
 	if (!source.GetIsEmpty()) {
 		queue<int> temp = source.m_lineNumbers;
 		int width = MAX_DOTS - source.m_wordText.size();
-		
-		out << source.GetWord();
-		
+		try {
+			out << source.GetWord();
+		}
+		catch (UnderflowException& e) {
+			throw exception(e.what());
+		}
 		// display dots and count
 		out << setfill(FILL_VAL) << setw(width);
-
-		out << source.GetCount() << ": ";
+		try {
+			out << source.GetCount() << ": ";
+		}
+		catch (UnderflowException& e) {
+			throw exception(e.what());		
+		}
 		int i = 0;
 		// display linenumbers using a temp copy of queue
 		while (!temp.empty()) {
-		  if(i < BREAK_LINE || temp.front() == temp.back()){
-		    
-		    if(temp.front() != temp.back()){
-		      out << temp.front() << " ";
-		    }
-		    // last number in the queue
-		    else{
-		      out << temp.front();
-		    }
-		  }
-		  else{
-		    out << temp.front() << endl;
-		    i = 0;
-		  }
-		  temp.pop();
-		  i++;
+			if (i < BREAK_LINE || temp.front() == temp.back()) {
+
+				if (temp.front() != temp.back()) {
+					out << temp.front() << " ";
+				}
+				// last number in the queue
+				else {
+					out << temp.front();
+				}
+			}
+			else {
+				out << temp.front() << endl;
+				i = 0;
+			}
+			temp.pop();
+			i++;
 		}
 	}
 

@@ -47,14 +47,12 @@ public:
      * Find the smallest item in the tree.
      * Throw UnderflowException if empty.
      */
-    /***************************TEMP PUT BACK CONSTS**********************************************************/
-    const Comparable& findMin() const 
+    const Comparable& findMin() const
     {
         if (isEmpty())
             throw UnderflowException();
         return findMin(root)->element;
     }
-    /***************************TEMP PUT BACK CONSTS**********************************************************/
 
     /**
      * Find the largest item in the tree.
@@ -95,6 +93,7 @@ public:
             printTree(root, out);
     }
     /******************************ERASE WHEN FINSHED*************************************************/
+    /*
     void ValCheck(string filename) {
         ifstream file;
         file.open(filename);
@@ -103,6 +102,7 @@ public:
         }
         file.close();
     }
+    */
     /******************************ERASE WHEN FINSHED*************************************************/
 
     void Export(string filename) {
@@ -126,7 +126,10 @@ public:
     {
         insert(x, root);
     }
-
+    // Name: Insert_To_Word_BST
+    // Description: Inserts x into a Index BST. Duiplicates are taken care of
+    // Pre-Conditions: BST exists  
+    // Post-Conditions: Inserts x into a Index BST
     void Insert_To_Word_BST(Word& x, const int& lineNum) {
         Insert_To_Word_BST(x, root, lineNum);
     }
@@ -210,7 +213,7 @@ private:
         else {
             t->element.CountWord(lineNum);
         }
-        
+
     }
     /**
      * Internal method to remove from a subtree.
@@ -325,6 +328,7 @@ private:
     }
 
     /******************************ERASE WHEN FINSHED*************************************************/
+    /*
     void ValCheck(BinaryNode* t, ifstream& output) {
         string line;
         if (t != nullptr) {
@@ -340,16 +344,14 @@ private:
             ValCheck(t->right, output);
         }
     }
+    */
     /******************************ERASE WHEN FINSHED*************************************************/
     void Export(BinaryNode* t, ofstream& input) {
         if (t != nullptr) {
             Export(t->left, input);
-
             input << t->element << endl;
             Export(t->right, input);
-        
         }
-
     }
     /**
      * Internal method to clone subtree.

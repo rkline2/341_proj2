@@ -52,12 +52,23 @@ void Indexer::DoIndex() {
 		String_To_Char(m_dataFile, word_file); String_To_Char(m_filterFile, filter_file);
 	}
 	catch (ArrayIndexOutOfBoundsException& e) {
-		throw Exceptions(e.what());
+	  delete m_filteredBST; delete m_indexBST;
+	  m_filteredBST = nullptr; m_indexBST = nullptr;
+	  m_filterFile.clear(); m_dataFile.clear();
+
+	  throw Exceptions(e.what());
 	}
 
 	bool word_file_exists = FileExists(word_file);
-	// files does not exist 
-	if (!word_file_exists) { throw Exceptions("Word file not found"); }
+	
+	// word file does not exist 
+	if (!word_file_exists) {
+	  delete m_filteredBST; delete m_indexBST;
+	  m_filteredBST = nullptr; m_indexBST = nullptr;
+	  m_filterFile.clear(); m_dataFile.clear();
+	  
+	  throw Exceptions("Word file not found");
+	}
 
 	m_filteredBST = &FileFilterReader(m_filterFile);
 	m_indexBST = &FileWordReader(m_dataFile);

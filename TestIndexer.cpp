@@ -47,43 +47,48 @@ int main(int argc, char* argv[]) {
             cout << "Enter any value to continue: "; cin >> usrResponse;
 
             inFilterFile = FILTER_CPY; inDataFile = "TestInput1.txt";
-            index1 = new Indexer(inFilterFile, inDataFile);
-            index1->DoIndex();
-            delete index1;
-            index1 = nullptr;
-        }
-
-        catch (Exceptions& e) {
-            cout << "Error " << e.GetMessage() << endl;
-        }
-
-        // Test 2 Indexing without a Word BST (Expect an error) 
-        cout << "\nTest 2: Indexing with and without a word file" << endl;
-        cout << "Enter any value to continue: "; cin >> usrResponse;
-        try {
-            cout << "Testing without TestInput1.txt (expect an error)" << endl;
-            cout << "Enter any value to continue: "; cin >> usrResponse;
-            inFilterFile.clear(); inDataFile.clear();
             Indexer* index2 = new Indexer(inFilterFile, inDataFile);
             index2->DoIndex();
             delete index2;
             index2 = nullptr;
         }
+
         catch (Exceptions& e) {
             cout << "Error " << e.GetMessage() << endl;
+	    return 1;
         }
-        cout << "Testing with TestInput1.txt as word file" << endl;
+
+        // Test 2 Indexing without a Word BST (Expect an error) 
+        cout << "\nTest 2: Indexing with and without a word file" << endl;
         cout << "Enter any value to continue: "; cin >> usrResponse;
+	
         try {
-            inFilterFile = FILTER_CPY; inDataFile = "TestInput1.txt";
+            cout << "Testing without TestInput1.txt (expect an error)" << endl;
+            cout << "Enter any value to continue: "; cin >> usrResponse;
+            inFilterFile.clear(); inDataFile.clear();
             Indexer* index3 = new Indexer(inFilterFile, inDataFile);
             index3->DoIndex();
             delete index3;
             index3 = nullptr;
         }
+        catch (Exceptions& e) {
+            cout << "Error " << e.GetMessage() << endl;
+	    return 1;
+        }
+	
+        cout << "Testing with TestInput1.txt as word file" << endl;
+        cout << "Enter any value to continue: "; cin >> usrResponse;
+        try {
+            inFilterFile = FILTER_CPY; inDataFile = "TestInput1.txt";
+            Indexer* index4 = new Indexer(inFilterFile, inDataFile);
+            index4->DoIndex();
+            delete index4;
+            index4 = nullptr;
+        }
 
         catch (Exceptions& e) {
             cout << "Error " << e.GetMessage() << endl;
+	    return 1;
         }
 
         // Test 3 Final 100m
@@ -96,10 +101,10 @@ int main(int argc, char* argv[]) {
         /*************************************************************/
         try {
             inDataFile = "TestInput2.txt";
-            Indexer* index1 = new Indexer(inFilterFile, inDataFile);
-            index1->DoIndex();
-            delete index1;
-            index1 = NULL;
+            Indexer* index5 = new Indexer(inFilterFile, inDataFile);
+            index5->DoIndex();
+            delete index5;
+            index5 = NULL;
         }
         //Something went wrong.
         catch (Exceptions& cException) {
@@ -113,10 +118,10 @@ int main(int argc, char* argv[]) {
         /*************************************************************/
         try {
             inDataFile = "TestInput3.txt";
-            Indexer* index2 = new Indexer(inFilterFile, inDataFile);
-            index2->DoIndex();
-            delete index2;
-            index2 = NULL;
+            Indexer* index6 = new Indexer(inFilterFile, inDataFile);
+            index6->DoIndex();
+            delete index6;
+            index6 = NULL;
         }
         //Something went wrong.
         catch (Exceptions& cException) {
@@ -130,10 +135,10 @@ int main(int argc, char* argv[]) {
         /*************************************************************/
         try {
             inDataFile = "TestInput4.txt";
-            Indexer* index3 = new Indexer(inFilterFile, inDataFile);
-            index3->DoIndex();
-            delete index3;
-            index3 = NULL;
+            Indexer* index7 = new Indexer(inFilterFile, inDataFile);
+            index7->DoIndex();
+            delete index7;
+            index7 = NULL;
         }
         //Something went wrong.
         catch (Exceptions& cException) {

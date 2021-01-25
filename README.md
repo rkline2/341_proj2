@@ -31,7 +31,7 @@ and is provided (and edited slightly), and named “gsl.txt”. It will not be p
   a.	This will need to be validated that it is present as well.<br>
   b.	certain punctuation will need to be removed from the data file<br>
   
-### The application, **in order**, will:
+### The application, in order, will:
 1)	Validate the input files.<br>
 2)	Read in the stop words file (gst.txt)<br>
 3)	Build a BST of Word(s) to be filtered called “filteredBST”.  Remember this will the list of stop words.<br>

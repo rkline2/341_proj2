@@ -1,7 +1,7 @@
 # Indexing using BSTs and overloading
 
 ## Objectives
-The objective of this programming assignment is to have you practice using Binary Search Trees (called BSTs from now on), Recursion, Queues, Strings, 
+The objective of this programming assignment is to have you practice using Binary Search Trees, Recursion, Queues, Strings, 
 Overloaded operators, and File I/O.
 
 ## Introduction

@@ -22,7 +22,7 @@ that can help in filtering common words and phrases, the stop words used in this
 and is provided (and edited slightly), and named “gsl.txt”. It will not be perfect, but it will do for this project. 
 
 ## Application Setup
-The application in command line format, will accept:
+### The application in command line format, will accept:
 1.	Filename of words NOT to be included in the index (the stop words).<br> 
   a.	This file needs to be validated that it is present.<br>
   b.	The filter list will not be in alphabetical order but will be one lower case word per line.<br>
@@ -31,7 +31,7 @@ The application in command line format, will accept:
   a.	This will need to be validated that it is present as well.<br>
   b.	certain punctuation will need to be removed from the data file<br>
   
-The application, **in order**, will:
+### The application, **in order**, will:
 1)	Validate the input files.<br>
 2)	Read in the stop words file (gst.txt)<br>
 3)	Build a BST of Word(s) to be filtered called “filteredBST”.  Remember this will the list of stop words.<br>
